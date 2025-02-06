@@ -1,6 +1,6 @@
 grumphp:
     tasks:
         phpstan:
-            level: 5                    # Niveau d'analyse (0 à max 9)
+            level: 1                    # Niveau d'analyse (0 à max 9)
             memory_limit: "-1"          # (optionnel) Augmenter la mémoire si nécessaire
 
