@@ -24,6 +24,9 @@ class Country
     #[ORM\OneToMany(targetEntity: Department::class, mappedBy: 'country')]
     private Collection $departments;
 
+    #[ORM\Column]
+    private ?float $tax = null;
+
     public function __construct()
     {
         $this->departments = new ArrayCollection();
@@ -72,6 +75,18 @@ class Country
                 $department->setCountry(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getTax(): ?float
+    {
+        return $this->tax;
+    }
+
+    public function setTax(float $tax): static
+    {
+        $this->tax = $tax;
 
         return $this;
     }
